@@ -33,13 +33,13 @@ jobs:
 
       - name: Build Site
         run: |
-          cd exampleSite
-          hugo --themesDir .. --baseURL https://nav.tanguohua.site/
+          cp -R exampleSite/* .
+          hugo --themesDir ../ --baseURL https://nav.tanguohua.site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./exampleSite/public
+          path: ./public
 
   deploy:
     environment:
