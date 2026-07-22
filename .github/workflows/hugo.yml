@@ -34,7 +34,7 @@ jobs:
       - name: Build Site
         run: |
           cd exampleSite
-          hugo --themesDir ../themes --baseURL https://nav.tanguohua.site/
+          hugo --themesDir .. --baseURL https://nav.tanguohua.site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
