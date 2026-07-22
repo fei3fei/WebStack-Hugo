@@ -23,6 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -33,7 +34,7 @@ jobs:
       - name: Build Site
         run: |
           cd exampleSite
-          hugo --themesDir ../ --baseURL https://nav.tanguohua.site/
+          hugo --themesDir ../themes --baseURL https://nav.tanguohua.site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
